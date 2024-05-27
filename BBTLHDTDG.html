@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giấy Đề Nghị Thanh Toán</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            width: 210mm;
+            /* Width of A4 */
+            margin: 0 auto;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .signature {
+            margin-top: 50px;
+        }
+
+        .content {
+            margin-left: 40px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="content">
+        <div class="center">
+            <h3>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h3>
+            <h4 class="bold">Độc lập - Tự do - Hạnh phúc</h4>
+            <p>---------------o0o---------------</p>
+        </div>
+
+        <h2 class="center">BIÊN BẢN THANH LÝ HỢP ĐỒNG THẨM ĐỊNH GIÁ</h2>
+        <div class="right">
+            <p>Thành phố Hồ Chí Minh, Ngày <span id="a"> </span> Tháng <span id="b"> </span> Năm <span id="c"></span>
+            </p>
+        </div>
+        <p class="center bold">SỐ <span id="y">/HD/TDG/AAVC</span></p>
+        <p class="bold">1. CĂN CỨ:</p>
+        <div class="content">
+            <p>Hợp đồng thẩm định giá số <span id="y1"></span>/HD/TDG/AAVC ngày <span id="ae"></span> giữa Công ty TNHH
+                Hãng Định Giá và Kiểm toán Châu Á
+                và <span id="aj1"></span></p>
+            <p>Căn Cứ kết quả thực hiện thẩm định giá tại chứng thư thẩm định giá số <span id="y3"></span>/HD/TDG/AAVC
+                ngày <span id="ae1"></span></p>
+        </div>
+        <p class="bold">2. THÀNH PHẦN THAM GIA:</p>
+        <div class="content">
+            <p><span class="bold">Bên giao việc:</span> (Gọi tắt là Bên A):<span class="bold" id="aj2"> .</span></p>
+            <p >- Đại diện: <span id="ak"></span> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Chức vụ: <span id="al"></span></p>
+            <p>- Địa chỉ: <span id="am"></span>.</p>
+            <p>- MST: <span id="an"></span></p>
+            <p>- Số tài khoản: 9527.3.1066591 tại Kho Bạc Nhà nước Tân Hồng. </p>
+
+        </div>
+        <div class="content">
+            <p><span class="bold">Bên nhận việc:</span> (Gọi tắt là Bên B): <span class="bold">Công ty TNHH Hãng Định
+                    giá và Kiểm toán Châu Á.</span></p>
+            <p>- Mã số doanh nghiệp: 0108340241</p>
+            <p>- Đại diện là: Ông Võ Hoàng Ẩn Chức vụ: Phó tổng giám đốc</p>
+            <p>(Theo Giấy ủy quyền số 08/2024/QĐ-TĐG ngày 04/01/2024)</p>
+            <p>- Địa chỉ miền Nam: 6-8 Phan Huy Thực, phường Tân Kiểng, Quận 7, TP.HCM</p>
+            <p>- Điện thoại: 0945 009002- 028 6674 3333</p>
+            <p>- Tài khoản: CT TNHH HANG DG VA KIEM TOAN CHAU A, STK: 000003400216 tại Ngân hàng TMCP Đông Nam Á
+                (Seabank)</p>
+            <p>- Chi nhánh Hà Đông – Phòng giao dịch Văn Quán.</p>
+
+        </div>
+        <p class="bold">3. TÌNH HÌNH THỰC HIỆN HỢP ĐỒNG:</p>
+        <div class="content">
+            <p>Bên B đã tiến hành Thẩm định giá Gói thầu: <span id="l"></span>. Và đã bàn giao số lượng Chứng thư thẩm định giá cho
+                Bên A đúng theo quy định. Bên A đồng ý nghiệm thu kết quả thẩm định giá của Bên B và thanh lý hợp đồng
+                tư vấn thẩm định giá.</p>
+        </div>
+        <p class="bold">4. THANH TOÁN: </p>
+        <div class="content">
+            <p>- Bên A có nghĩa vụ thanh toán toàn bộ phí dịch vụ cho Bên B.</p>
+            <p>- Tổng số phí dịch vụ (bao gồm VAT): <span id="ss"></span> đồng</p>
+            <p>- Số đã thanh toán : <span id="uu"></span> đồng</p>
+            <p>- Số còn lại phải thanh toán : <span id="vv"></span> đồng</p>
+            <p>(Bằng chữ: (giá trị bằng chữ cột V))</p>
+            <p>Hình thức thanh toán: Tiền mặt/Bằng chuyển khoản.</p>
+
+        </div>
+        <p class="bold">5. KẾT LUẬN: </p>
+        <div class="content">
+            <p>- Hợp đồng thẩm định giá số <span id="y2"></span>/HD/TDG/AAVC ngày <span id="ae2"></span> giữa công ty TNHH Hãng Định giá và Kiểm
+                toán
+                Châu Á và <span id="aj3"></span> sẽ hết hiệu lực kể từ ngày Bên A đã thanh toán đầy đủ phí dịch vụ thẩm định cho Bên
+                B.</p>
+            <p>- Biên bản này được lập thành 03 bản, Bên A giữ 02 bản, Bên B giữ 01 bản, các bản có giá trị pháp lý như
+                nhau.</p>
+
+        </div>
+
+        <div class="signature" style="display: flex; justify-content: space-between;">
+            <div style="text-align: left;">&emsp;BÊN GIAO VIỆC</div>
+            <div style="text-align: right;">BÊN NHẬN VIỆC&emsp;</div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+            <img src="https://ninhpoal.github.io/thamdinh/hinhanh/dinhgiaavsodt-removebg-preview.png"
+                style="    width: 100px;" alt="Logo Định Giá AV">
+
+        </div>
+    </div>
+    <script>
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Get parameters from URL
+        var a = getUrlParameter('a');
+        var b = getUrlParameter('b');
+        var c = getUrlParameter('c');
+        var aj = getUrlParameter('aj');
+        var y = getUrlParameter('y');
+        var ss = getUrlParameter('ss');
+        var uu = getUrlParameter('uu');
+        var vv = getUrlParameter('vv');
+        var ae = getUrlParameter('ae');
+        var l = getUrlParameter('l');
+        var ak = getUrlParameter('ak');
+        var al = getUrlParameter('al');
+        var am = getUrlParameter('am');
+        var an = getUrlParameter('an');
+        // Display parameters on the page
+        document.getElementById('a').textContent = a;
+        document.getElementById('b').textContent = b;
+        document.getElementById('c').textContent = c;
+     
+        document.getElementById('aj1').textContent = aj;
+        document.getElementById('aj2').textContent = aj;
+        document.getElementById('aj3').textContent = aj;
+        document.getElementById('y').textContent = y;
+        document.getElementById('y1').textContent = y;
+        document.getElementById('y2').textContent = y;
+        document.getElementById('y3').textContent = y;
+        document.getElementById('ss').textContent = ss;
+        document.getElementById('uu').textContent = uu;
+        document.getElementById('vv').textContent = vv;
+        document.getElementById('ae').textContent = ae;
+        document.getElementById('ae1').textContent = ae;
+        document.getElementById('ae2').textContent = ae;
+        document.getElementById('l').textContent = l;
+        document.getElementById('ak').textContent = ak;
+        document.getElementById('al').textContent = al;
+        document.getElementById('am').textContent = am;
+        document.getElementById('an').textContent = an;
+    </script>
+
+
+
+</body>
+
+</html>
