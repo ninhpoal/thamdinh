@@ -1,0 +1,605 @@
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="vi" lang="vi">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Phụ lục thanh toán 03a - 7887HCM.2023</title>
+    <meta name="author" content="Vũ Minh Hoàn" />
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            text-indent: 0;
+        }
+
+        h1 {
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        .p,
+        p {
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+            margin: 0pt;
+        }
+
+        .s2 {
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: italic;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        .s3 {
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        .s4 {
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        .s5 {
+            color: #F00;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        .s6 {
+            color: #F00;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        .s7 {
+            color: #F00;
+            font-family: "Times New Roman", serif;
+            font-style: italic;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        li {
+            display: block;
+        }
+
+        #l1 {
+            padding-left: 0pt;
+            counter-reset: c1 1;
+        }
+
+        #l1>li>*:first-child:before {
+            counter-increment: c1;
+            content: counter(c1, decimal)". ";
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        #l1>li:first-child>*:first-child:before {
+            counter-increment: c1 0;
+        }
+
+        #l2 {
+            padding-left: 0pt;
+        }
+
+        #l2>li>*:first-child:before {
+            content: "- ";
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        #l3 {
+            padding-left: 0pt;
+        }
+
+        #l3>li>*:first-child:before {
+            content: "- ";
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        table,
+        tbody {
+            vertical-align: top;
+            overflow: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="buttons">
+
+        <button onclick="exportToExcel()">Xuất file excel</button>
+
+    </div>
+    <br>
+    <div class="container" id="content">
+        <h1 style="padding-top: 8pt;padding-left: 348pt;text-indent: 0pt;text-align: left;"><a name="bookmark0">BẢNG XÁC
+                ĐỊNH GIÁ TRỊ KHỐI LƯỢNG CÔNG VIỆC HOÀN THÀNH Mẫu số 03.a/TT</a></h1>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <p style="padding-top: 4pt;padding-left: 8pt;text-indent: 0pt;text-align: left;">Tên dự án: (<span
+                style=" color: #F00;">cột L) </span>Mã dự án:</p>
+        <p style="padding-top: 2pt;padding-left: 8pt;text-indent: 0pt;text-align: left;">Tên gói thầu: Tư vấn thẩm định
+            giá
+        </p>
+        <p style="padding-top: 1pt;padding-left: 8pt;text-indent: 0pt;text-align: left;">Căn cứ Hợp đồng dịch vụ số:
+            <span style=" color: #F00;">(cột Y)</span>/HĐ/TĐG/AAVC ngày <span style=" color: #F00;">(cột AE)</span>
+        </p>
+        <p style="padding-left: 8pt;text-indent: 0pt;line-height: 112%;text-align: left;">Căn cứ quyết định phê duyệt dự
+            toán số (trong trường hợp thực hiện không thông qua hợp đồng):……….ngày……….tháng………..năm…….. Chủ đầu tư:
+            <span style=" color: #F00;">(cột AJ)</span>
+        </p>
+        <p style="padding-left: 8pt;text-indent: 0pt;line-height: 109%;text-align: left;">Nhà thầu: Công ty TNHH Hãng
+            Định
+            giá và Kiểm toán Châu Á Thanh toán lần thứ: Hoàn thành</p>
+        <p style="padding-top: 1pt;padding-left: 8pt;text-indent: 0pt;text-align: left;">Căn cứ xác định:</p>
+        <p style="padding-top: 1pt;padding-left: 8pt;text-indent: 0pt;text-align: left;">+ Biên bản nghiệm thu và bàn
+            giao
+            chứng thư số: <span style=" color: #F00;">(cột Y)</span>/BBNT-BG/AAVC <span style=" color: #F00;">ngày tháng
+                năm
+                (cột AD+1, tránh thứ 7, chủ nhật)</span></p>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <p class="s2" style="padding-left: 8pt;text-indent: 0pt;text-align: left;">Đơn vị: Đồng</p>
+        <table style="border-collapse:collapse;margin-left:6.2459pt" cellspacing="0">
+            <tr style="height:21pt">
+                <td style="width:36pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"
+                    rowspan="3">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s3" style="padding-top: 9pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">Stt</p>
+                </td>
+                <td style="width:235pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"
+                    rowspan="3">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s3"
+                        style="padding-top: 9pt;padding-left: 63pt;padding-right: 61pt;text-indent: 0pt;text-align: center;">
+                        Tên công việc</p>
+                </td>
+                <td style="width:47pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"
+                    rowspan="3">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s3" style="padding-left: 13pt;text-indent: -6pt;line-height: 109%;text-align: left;">Đơn
+                        vị
+                        tính</p>
+                </td>
+                <td style="width:422pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"
+                    colspan="4">
+                    <p class="s3"
+                        style="padding-top: 2pt;padding-left: 180pt;padding-right: 179pt;text-indent: 0pt;text-align: center;">
+                        Khối lượng</p>
+                </td>
+                <td style="width:83pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"
+                    rowspan="3">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s3"
+                        style="padding-left: 4pt;padding-right: 3pt;text-indent: 0pt;line-height: 109%;text-align: center;">
+                        Đơn giá thanh toán theo hợp đồng hoặc dự toán</p>
+                </td>
+                <td style="width:326pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"
+                    colspan="4">
+                    <p class="s3"
+                        style="padding-top: 2pt;padding-left: 116pt;padding-right: 114pt;text-indent: 0pt;text-align: center;">
+                        Thành tiền (đồng)</p>
+                </td>
+                <td style="width:54pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"
+                    rowspan="3">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s3" style="padding-top: 9pt;padding-left: 6pt;text-indent: 0pt;text-align: left;">Ghi chú
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:22pt">
+                <td style="width:86pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"
+                    rowspan="2">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s3"
+                        style="padding-left: 5pt;padding-right: 5pt;text-indent: 0pt;line-height: 109%;text-align: center;">
+                        Khối lượng theo hợp đồng hoặc dự toán</p>
+                </td>
+                <td style="width:336pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"
+                    colspan="3">
+                    <p class="s3"
+                        style="padding-top: 3pt;padding-left: 140pt;padding-right: 139pt;text-indent: 0pt;text-align: center;">
+                        Thực hiện</p>
+                </td>
+                <td style="width:81pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"
+                    rowspan="2">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s3" style="padding-left: 7pt;text-indent: -5pt;line-height: 109%;text-align: left;">Theo
+                        hợp
+                        đồng hoặc dự toán</p>
+                </td>
+                <td style="width:245pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"
+                    colspan="3">
+                    <p class="s3"
+                        style="padding-top: 3pt;padding-left: 95pt;padding-right: 94pt;text-indent: 0pt;text-align: center;">
+                        Thực hiện</p>
+                </td>
+            </tr>
+            <tr style="height:51pt">
+                <td
+                    style="width:73pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s3"
+                        style="padding-top: 10pt;padding-left: 5pt;text-indent: 3pt;line-height: 109%;text-align: left;">
+                        Lũy
+                        kế đến hết kỳ trước</p>
+                </td>
+                <td
+                    style="width:177pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s3" style="padding-left: 43pt;text-indent: 0pt;text-align: left;">Thực hiện kỳ này</p>
+                </td>
+                <td
+                    style="width:86pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s3"
+                        style="padding-top: 10pt;padding-left: 25pt;text-indent: -21pt;line-height: 109%;text-align: left;">
+                        Lũy kế đến hết kỳ này</p>
+                </td>
+                <td
+                    style="width:90pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s3"
+                        style="padding-top: 10pt;padding-left: 22pt;text-indent: -16pt;line-height: 109%;text-align: left;">
+                        Lũy kế đến hết kỳ trước</p>
+                </td>
+                <td
+                    style="width:81pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s3"
+                        style="padding-top: 10pt;padding-left: 31pt;text-indent: -24pt;line-height: 109%;text-align: left;">
+                        Thực hiện kỳ này</p>
+                </td>
+                <td
+                    style="width:74pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s3"
+                        style="padding-top: 10pt;padding-left: 10pt;text-indent: -2pt;line-height: 109%;text-align: left;">
+                        Lũy kế đến hết kỳ này</p>
+                </td>
+            </tr>
+            <tr style="height:14pt">
+                <td
+                    style="width:36pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s4"
+                        style="padding-left: 10pt;padding-right: 9pt;text-indent: 0pt;line-height: 12pt;text-align: center;">
+                        [1]</p>
+                </td>
+                <td
+                    style="width:235pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s4"
+                        style="padding-left: 63pt;padding-right: 61pt;text-indent: 0pt;line-height: 12pt;text-align: center;">
+                        [2]</p>
+                </td>
+                <td
+                    style="width:47pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s4"
+                        style="padding-left: 10pt;padding-right: 10pt;text-indent: 0pt;line-height: 12pt;text-align: center;">
+                        [3]</p>
+                </td>
+                <td
+                    style="width:86pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s4"
+                        style="padding-left: 34pt;padding-right: 34pt;text-indent: 0pt;line-height: 12pt;text-align: center;">
+                        [4]</p>
+                </td>
+                <td
+                    style="width:73pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s4"
+                        style="padding-left: 28pt;padding-right: 28pt;text-indent: 0pt;line-height: 12pt;text-align: center;">
+                        [5]</p>
+                </td>
+                <td
+                    style="width:177pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s4"
+                        style="padding-left: 80pt;padding-right: 79pt;text-indent: 0pt;line-height: 12pt;text-align: center;">
+                        [6]</p>
+                </td>
+                <td
+                    style="width:86pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s4"
+                        style="padding-left: 35pt;padding-right: 34pt;text-indent: 0pt;line-height: 12pt;text-align: center;">
+                        [7]</p>
+                </td>
+                <td
+                    style="width:83pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s4"
+                        style="padding-left: 33pt;padding-right: 33pt;text-indent: 0pt;line-height: 12pt;text-align: center;">
+                        [8]</p>
+                </td>
+                <td
+                    style="width:81pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s4"
+                        style="padding-left: 29pt;padding-right: 29pt;text-indent: 0pt;line-height: 12pt;text-align: center;">
+                        [9]</p>
+                </td>
+                <td
+                    style="width:90pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s4"
+                        style="padding-left: 34pt;padding-right: 33pt;text-indent: 0pt;line-height: 12pt;text-align: center;">
+                        [10]</p>
+                </td>
+                <td
+                    style="width:81pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s4"
+                        style="padding-left: 30pt;padding-right: 29pt;text-indent: 0pt;line-height: 12pt;text-align: center;">
+                        [11]</p>
+                </td>
+                <td
+                    style="width:74pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s4"
+                        style="padding-left: 26pt;padding-right: 25pt;text-indent: 0pt;line-height: 12pt;text-align: center;">
+                        [12]</p>
+                </td>
+                <td
+                    style="width:54pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s4" style="padding-left: 16pt;text-indent: 0pt;line-height: 12pt;text-align: left;">[13]
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:63pt">
+                <td
+                    style="width:36pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s4" style="padding-top: 8pt;padding-left: 1pt;text-indent: 0pt;text-align: center;">1</p>
+                </td>
+                <td
+                    style="width:235pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s4"
+                        style="padding-top: 8pt;padding-left: 63pt;padding-right: 63pt;text-indent: 0pt;text-align: center;">
+                        Thẩm định giá <span style=" color: #F00;">(cột L)</span></p>
+                </td>
+                <td
+                    style="width:47pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s4"
+                        style="padding-top: 8pt;padding-left: 10pt;padding-right: 10pt;text-indent: 0pt;text-align: center;">
+                        đồng</p>
+                </td>
+                <td
+                    style="width:86pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s4" style="padding-top: 8pt;padding-left: 54pt;text-indent: 0pt;text-align: left;">100%
+                    </p>
+                </td>
+                <td
+                    style="width:73pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                </td>
+                <td
+                    style="width:177pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s4" style="padding-top: 8pt;text-indent: 0pt;text-align: right;">100%</p>
+                </td>
+                <td
+                    style="width:86pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s4" style="padding-top: 8pt;padding-left: 55pt;text-indent: 0pt;text-align: left;">100%
+                    </p>
+                </td>
+                <td
+                    style="width:83pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s5" style="padding-top: 8pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">(cột S)
+                    </p>
+                </td>
+                <td
+                    style="width:81pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s5" style="padding-top: 8pt;padding-left: 1pt;text-indent: 0pt;text-align: left;">(cột S)
+                    </p>
+                </td>
+                <td
+                    style="width:90pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s4" style="padding-top: 8pt;text-indent: 0pt;text-align: right;">-</p>
+                </td>
+                <td
+                    style="width:81pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s5" style="padding-top: 8pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">(cột S)
+                    </p>
+                </td>
+                <td
+                    style="width:74pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                    <p class="s5" style="padding-top: 8pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">(cột S)
+                    </p>
+                </td>
+                <td
+                    style="width:54pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                </td>
+            </tr>
+            <tr style="height:14pt">
+                <td
+                    style="width:36pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                </td>
+                <td
+                    style="width:235pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s3"
+                        style="padding-left: 63pt;padding-right: 61pt;text-indent: 0pt;line-height: 13pt;text-align: center;">
+                        TỔNG SỐ</p>
+                </td>
+                <td
+                    style="width:47pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                </td>
+                <td
+                    style="width:86pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                </td>
+                <td
+                    style="width:73pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                </td>
+                <td
+                    style="width:177pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                </td>
+                <td
+                    style="width:86pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                </td>
+                <td
+                    style="width:83pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                </td>
+                <td
+                    style="width:81pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s3" style="padding-right: 1pt;text-indent: 0pt;line-height: 13pt;text-align: right;">-</p>
+                </td>
+                <td
+                    style="width:90pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s3" style="text-indent: 0pt;line-height: 13pt;text-align: right;">-</p>
+                </td>
+                <td
+                    style="width:81pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s3" style="text-indent: 0pt;line-height: 13pt;text-align: right;">-</p>
+                </td>
+                <td
+                    style="width:74pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p class="s6" style="padding-left: 38pt;text-indent: 0pt;line-height: 13pt;text-align: left;">(cột
+                        S)
+                    </p>
+                </td>
+                <td
+                    style="width:54pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                </td>
+            </tr>
+        </table>
+        <ol id="l1">
+            <li data-list-text="1.">
+                <p style="padding-top: 1pt;padding-left: 56pt;text-indent: -12pt;text-align: left;">Giá trị hợp đồng
+                    (giá
+                    trị dự toán được duyệt trong trường hợp thực hiện không thông qua hợp đồng): (cột S) Đồng</p>
+            </li>
+            <li data-list-text="2.">
+                <p style="padding-top: 1pt;padding-left: 56pt;text-indent: -12pt;text-align: left;">Giá trị tạm ứng còn
+                    lại
+                    chưa thu hồi đến cuối kỳ trước: 0 Đồng</p>
+            </li>
+            <li data-list-text="3.">
+                <p style="padding-top: 1pt;padding-left: 56pt;text-indent: -12pt;text-align: left;">Số tiền đã thanh
+                    toán
+                    khối lượng hoàn thành đến cuối kỳ trước: 0 Đồng</p>
+            </li>
+            <li data-list-text="4.">
+                <p style="padding-top: 1pt;padding-left: 56pt;text-indent: -12pt;text-align: left;">Lũy kế giá trị khối
+                    lượng thực hiện đến cuối kỳ này: (cột S) Đồng</p>
+            </li>
+            <li data-list-text="5.">
+                <p style="padding-top: 1pt;padding-left: 56pt;text-indent: -12pt;text-align: left;">Thanh toán để thu
+                    hồi
+                    tạm ứng: 0 Đồng</p>
+            </li>
+            <li data-list-text="6.">
+                <p style="padding-top: 1pt;padding-left: 56pt;text-indent: -12pt;text-align: left;">Giá trị đề nghị giải
+                    ngân kỳ này: (cột S) Đồng</p>
+                <p class="s2" style="padding-top: 1pt;padding-left: 44pt;text-indent: 0pt;text-align: left;">Số tiền
+                    bằng
+                    chữ: <span style=" color: #F00;">(giá trị bằng chữ cột S) </span>, <span class="p">trong đó:</span>
+                </p>
+                <ul id="l2">
+                    <li data-list-text="-">
+                        <p style="padding-left: 51pt;text-indent: -6pt;text-align: left;">Tạm ứng: 0 Đồng</p>
+                    </li>
+                    <li data-list-text="-">
+                        <p style="padding-top: 1pt;padding-left: 51pt;text-indent: -7pt;text-align: left;">Thanh toán
+                            khối
+                            lượng hoàn thành: (cột S) Đồng</p>
+                    </li>
+                </ul>
+            </li>
+            <li data-list-text="7.">
+                <p style="padding-top: 1pt;padding-left: 56pt;text-indent: -12pt;text-align: left;">Luỹ kế giá trị giải
+                    ngân: (cột S) Đồng</p>
+                <p class="s2" style="padding-top: 1pt;padding-left: 44pt;text-indent: 0pt;text-align: left;">Trong đó
+                </p>
+                <ul id="l3">
+                    <li data-list-text="-">
+                        <p style="padding-top: 1pt;padding-left: 51pt;text-indent: -6pt;text-align: left;">Tạm ứng: 0
+                            Đồng
+                        </p>
+                    </li>
+                    <li data-list-text="-">
+                        <p style="padding-left: 51pt;text-indent: -7pt;text-align: left;">Thanh toán khối lượng hoàn
+                            thành:
+                            (cột S) Đồng</p>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <h1 style="padding-top: 10pt;padding-left: 201pt;text-indent: 0pt;text-align: left;">ĐẠI DIỆN NHÀ THẦU</h1>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <p class="s7" style="padding-left: 4pt;text-indent: 0pt;text-align: left;">(cột E) <span style=" color: #000;">,
+            </span>Ngày tháng năm (cột AD+1, tránh thứ 7, chủ nhật)</p>
+        <h1 style="padding-top: 6pt;padding-left: 42pt;text-indent: 0pt;text-align: left;">ĐẠI DIỆN CHỦ ĐẦU TƯ/BAN QUẢN
+            LÝ
+            DỰ ÁN</h1>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <p style="padding-left: 16pt;text-indent: 0pt;text-align: left;"><span><img width="159" height="40" alt="image"
+                    src="hinhanh/dinhgiaavsodt-removebg-preview.png" /></span></p>
+    </div>
+    <script>
+        function exportToExcel() {
+            var content = document.getElementById('content').innerHTML;
+            // Thiết lập font-family cho nội dung Excel
+            var excelContent = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="UTF-8"><style>body { font-family: "Times New Roman", serif; }</style></head><body>' + content + '</body></html>';
+            var blob = new Blob([excelContent], {
+                type: 'application/vnd.ms-excel'
+            });
+            var url = URL.createObjectURL(blob);
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = 'content.xls';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+    </script>
+</body>
+
+</html>
