@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giấy Đề Nghị Thanh Toán</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        body {
+            font-family: "Times New Roman", Times, serif;
+            width: 210mm; /* Width of A4 */
+            margin: 0 auto;
+        }
+        .center {
+            text-align: center;
+        }
+        .right {
+            text-align: right;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+        .signature {
+            margin-top: 50px;
+        }
+        .content {
+            margin-left: 40px;
+        }
+        .red {
+            color: red;
+        }
+        .buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+   
+
+    <div id="content">
+        <div class="center">
+            <h3>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h3>
+            <h4 class="bold">Độc lập - Tự do - Hạnh phúc</h4>
+            <p>---------------o0o---------------</p>
+        </div>
+        <div class="right">
+            <p>TP.HCM, Ngày <span id="a"> </span> Tháng <span id="b"> </span> Năm  <span id="c"></span></p>
+        </div>
+        <h2 class="center">GIẤY ĐỀ NGHỊ THANH TOÁN</h2>
+        <p class="center bold">Kính gửi: <span id="aj"></span></p>
+        <div class="content">
+            <p>Căn cứ theo Hợp đồng thẩm định giá số <span id="y"></span>/HD/TDG/AAVC ngày <span id="ae"></span> giữa <span id="aj2"></span> và Công ty TNHH Hãng Định Giá và Kiểm toán Châu Á.</p>
+            <p>Chúng tôi kính đề nghị <span id="aj3"></span> thực hiện việc thanh toán toàn bộ số tiền đã ghi nhận trong Điều 5 của Hợp đồng cho Công ty TNHH Hãng Định Giá và Kiểm toán Châu Á, cụ thể như sau:</p>
+            <ul>
+                <li>Số tiền hợp đồng: <span id="s"> </span> VND</li>
+                <li>Số tiền đơn vị đã ứng trước: <span id="u"> </span> VND</li>
+                <li>Số tiền còn lại phải thanh toán: <span id="v"></span> VND.</li>
+            </ul>
+            <p>(Bằng chữ: <span >giá trị bằng chữ cột V</span>)</p>
+        </div>
+        <p class="bold">Thông tin tài khoản:</p>
+        <div class="content">
+            <p>Công ty TNHH Hãng Định giá và Kiểm toán Châu Á</p>
+            <p>Tài khoản số: 000003400216</p>
+            <p>Tại Ngân hàng TMCP Đông Nam Á (Seabank) - Chi nhánh Hà Đông – Phòng giao dịch Văn Quán</p>
+        </div>
+        <p>Rất mong sự hợp tác của Quý Công ty.<br>Trân trọng cảm ơn!</p>
+        <div class="signature">
+            <p class="right">ĐẠI DIỆN CÔNG TY<br>Phó Tổng Giám Đốc</p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class="right"><span class="bold">VÕ HOÀNG ẤN&ensp;</span></p>
+        </div>
+        <div  >
+            <img src="https://ninhpoal.github.io/thamdinh/hinhanh/dinhgiaavsodt-removebg-preview.png" style="    width: 100px;" alt="Logo Định Giá AV">
+            
+        </div>
+    </div>
+    <script>
+         function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Get parameters from URL
+        var a = getUrlParameter('a');
+        var b = getUrlParameter('b');
+        var c = getUrlParameter('c');
+        var aj = getUrlParameter('aj');
+        var y = getUrlParameter('y');
+        var s = getUrlParameter('s');
+        var u = getUrlParameter('u');
+        var v = getUrlParameter('v');
+        // Display parameters on the page
+        document.getElementById('a').textContent = a;
+        document.getElementById('b').textContent = b;
+        document.getElementById('c').textContent = c;
+        document.getElementById('aj').textContent = aj;
+        document.getElementById('aj1').textContent = aj;
+        document.getElementById('aj2').textContent = aj;
+        document.getElementById('aj3').textContent = aj;
+        document.getElementById('y').textContent = y;
+        ocument.getElementById('s').textContent = s;
+        ocument.getElementById('u').textContent = u;
+        ocument.getElementById('v').textContent = v;
+    </script>
+    
+</body>
+</html>
