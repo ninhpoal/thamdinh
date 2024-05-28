@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giấy Đề Nghị Thanh Toán</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            width: 210mm;
+            /* Width of A4 */
+            margin: 0 auto;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .signature {
+            margin-top: 50px;
+        }
+
+        .content {
+            margin-left: 40px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        @media print {
+            #footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                text-align: right;
+                /* Đảm bảo rằng nền footer là trắng để tránh chồng lấp */
+                padding: 10px 0;
+                /* Đường kẻ ngăn cách footer với nội dung */
+            }
+
+            /* Ẩn các phần tử khác nếu cần */
+            #in * {
+                visibility: hidden;
+            }
+
+            #footer,
+            #footer,
+            #content * {
+                visibility: visible;
+            }
+
+            /* Nếu bạn muốn hiện các phần khác của nội dung, hãy tùy chỉnh các selector */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="in"><button type="button" class="btn btn-outline-primary" onclick="window.print()">In hoặc xuất
+            PDF</button></div>
+
+    <div id="content">
+        <div class="center">
+            <h4 class="bold">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h4>
+            <h5 class="bold">Độc lập - Tự do - Hạnh phúc</h5>
+            <p>---------------o0o---------------</p>
+            
+        </div>
+    
+        <div class="signature" style="display: flex; justify-content: space-between;">
+            <div  style="text-align: left;">Số: (cột Y)/HĐ/TĐG/AAVC</div>
+            <div style="text-align: right;">TP HCM, ngày  tháng  năm (cột AE)</div>
+        </div>
+        <br>
+        <h4 class="center bold">HỢP ĐỒNG DỊCH VỤ THẨM ĐỊNH GIÁ </h4>
+        <p>- Căn cứ Bộ Luật Dân sự số 91/2015/QH13 của nước Cộng hoà xã hội chủ nghĩa Việt Nam năm 2015;</p>
+        <p>- Căn cứ Luật Doanh nghiệp số 59/2020/QH14 nước Cộng hoà xã hội chủ nghĩa Việt Nam;</p>
+        <p>- Căn cứ Luật giá số 11/2012/QH13 ngày 20 tháng 06 năm 2012 của Quốc Hội và các văn bản hướng dẫn thi hành;
+        </p>
+        <p>- Căn cứ Nghị định số 89/2013/NĐ-CP ngày 06/8/2013 của Chính Phủ về Thẩm định giá; Thông tư số 38/2014/TT-BTC
+            ngày 28/03/2014 của Bộ Tài chính hướng dẫn thưc hiện Nghị định 89/2013/NĐ-CP;</p>
+        <p>- Căn cứ Nghị định số 59/2011/NĐ-CP ngày 18/7/2011 của Chính phủ và Thông tư số 127/2014/TT-BTC hướng dẫn
+            thực hiện Nghị định 59/2011/NĐ-CP;</p>
+        <p>Căn cứ nhu cầu và khả năng của hai bên.</p>
+        
+        <div class="content">
+            <p>Hôm nay, chúng tôi gồm các bên dưới đây:</p>
+            <p><span class="bold">1.Bên giao việc:</span> (Gọi tắt là Bên A):<span class="bold" id="aj2"> .</span></p>
+            <p>- Đại diện: <span id="ak"></span>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Chức vụ: <span id="al"></span>
+            </p>
+            <p>- Địa chỉ: <span id="am"></span>.</p>
+            <p>- MST: <span id="an"></span></p>
+            <p>- Số tài khoản: 9527.3.1066591 tại Kho Bạc Nhà nước Tân Hồng. </p>
+
+        </div>
+        <div class="content">
+            <p><span class="bold">Bên nhận việc:</span> (Gọi tắt là Bên B): <span class="bold">Công ty TNHH Hãng Định
+                    giá và Kiểm toán Châu Á.</span></p>
+            <p>- Mã số doanh nghiệp: 0108340241</p>
+            <p>- Đại diện là: Ông Võ Hoàng Ẩn
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Chức vụ: Phó tổng giám đốc</p>
+            <p class="center">(Theo Giấy ủy quyền số 08/2024/QĐ-TĐG ngày 04/01/2024)</p>
+            <p>(Theo Giấy ủy quyền số 08/2024/QĐ-TĐG ngày 04/01/2024)</p>
+            <p>- Địa chỉ miền Nam: 6-8 Phan Huy Thực, phường Tân Kiểng, Quận 7, TP.HCM</p>
+            <p>- Điện thoại: 0945 009002- 028 6674 3333</p>
+            <p>- Tài khoản: CT TNHH HANG DG VA KIEM TOAN CHAU A, STK: 000003400216 tại Ngân hàng TMCP Đông Nam Á
+                (Seabank)</p>
+            <p>- Chi nhánh Hà Đông – Phòng giao dịch Văn Quán.</p>
+
+        </div>
+        <p class="bold">ĐIỀU 1: NỘI DUNG CÔNG VIỆC:</p>
+        <div class="content">
+            <p>Bên A giao Bên B thực hiện thẩm định giá Gói thầu: <span id="l1"></span>.</p>
+        </div>
+        <p class="bold">ĐIỀU 2: THỜI ĐIỂM THẨM ĐỊNH GIÁ </p>
+        <div class="content">
+            <p>Vào thời điểm <span id="f"></span>.</p>
+
+        </div>
+        <p class="bold">ĐIỀU 3: MỤC ĐÍCH THẨM ĐỊNH GIÁ </p>
+        <div class="content">
+            <p>Xác định giá trị tài sản làm cơ sở <span id="n"></span></p>
+
+
+        </div>
+        <p class="bold">ĐIỀU 4: THỜI GIAN VÀ PHÍ DỊCH VỤ THẨM ĐỊNH GIÁ </p>
+        <p class="bold">4.1. Thời gian thẩm định giá: </p>
+
+        <p>&emsp;&emsp;Bên B tiến hành công việc thẩm định và trả lời kết quả bằng văn bản trong vòng 14 ngày làm việc
+            (kể từ
+            ngày hợp đồng có hiệu lực và Bên A đã bàn giao đầy đủ hô sơ pháp lý về tài sản thẩm định cho Bên B).
+        </p>
+        <p><span class="bold">4.2 Phí dịch vụ thẩm định giá: </span> Theo thỏa thuận của hai bên, cụ thể như sau:</p>
+        <p>Giá trị hợp đồng: <span id="ss"></span> đồng (đã bao gồm thuế GTGT)</p>
+        <p class="bold">ĐIỀU 5: PHƯƠNG THỨC THANH TOÁN </p>
+        <div class="content">
+            <p>- Phương thức thanh toán: Tiền mặt hoặc chuyển khoản.</p>
+            <p>- Bên A thanh toán 100% giá trị hợp đồng sau khi hai bên tiến hành nghiệm thu hợp đồng, Bên B phát hành
+                Chứng thư thẩm định giá cho Bên A và Bên A nhận được đầy đủ hồ sơ thanh toán.</p>
+
+        </div>
+        <p class="bold">ĐIỀU 6: TRÁCH NHIỆM CỦA CÁC BÊN </p>
+        <p class="bold">6.1. Trách nhiệm của Bên A (Kể cả trường hợp không sử dụng kết quả thẩm định giá)</p>
+        <p>- Cung cấp cho bên B đầy đủ hồ sơ kinh tế, kỹ thuật và pháp lý của tài sản. Chịu hoàn toàn trách nhiệm về
+            tính
+            pháp lý của hồ sơ và tính chính xác của các thông tin đã cung cấp.</p>
+        <p>- Cử người đại diện liên hệ và giải quyết những khó khăn, vướng mắc phát sinh trong quá trình thẩm định. Tạo
+            điều kiện thuận lợi và cần thiết trong quá trình thu thập thông tin, hồ sơ về dự án thẩm định từ lúc bắt đầu
+            cho
+            đến lúc kết thúc để bên B tiến hành việc thẩm định giá có hiệu quả.</p>
+        <p>- Sử dụng văn bản kết quả thẩm định giá do bên B cung cấp đúng mục đích được ghi rõ trong Hợp đồng và Văn bản
+            thẩm định giá. Nếu bên A sử dụng kết quả thẩm định giá sai mục đích thì phải chịu hoàn toàn trách nhiệm
+            trước
+            pháp luật.</p>
+        <p>- Chứng thư thẩm định do bên B phát hành không có giá trị thay thế cho bất kỳ loại giấy chứng nhận quyền sở
+            hữu
+            tài sản nào thuộc quyền quản lý và sử dụng của bên A.</p>
+
+        <p>- Thanh toán phí dịch vụ thẩm định giá cho Bên B theo quy định tại Điều 4 của Hợp đồng này (kể cả trường hợp
+            không sử dụng kết quả thẩm định).</p>
+        <p class="bold">6.2. Trách nhiệm của Bên B:</p>
+        <p>- Thực hiện việc thẩm định giá theo đề nghị Bên A đảm bảo tính khách quan, độc lập, chuyên nghiệp, thận trọng
+            theo đúng các quy trình chuyên môn và quy định của pháp luật.</p>
+        <p>- Bảo đảm bí mật các thông tin tài liệu, hồ sơ liên quan đến dự án thẩm định do Bên A cung cấp.
+        <p>- Cấp cho Bên A 02 bản chính Chứng thư thẩm định giá.</p>
+        <p>- Bên B chỉ thẩm định giá trị tài sản của Bên A (các thành viên khác liên quan) cho mục đích xác định giá trị
+            thị trường (theo đúng mục đích thẩm định tại Điều 3 của hợp đồng này).</p>
+        <p>- Bên B chỉ xác định giá trị thị trường cho Bên A theo cơ chế giá thị trường, có trách nhiệm giải thích cho
+            Bên
+            A trong thời gian hiệu lực của chứng thư thẩm định giá và không có trách nhiệm giải trình với các bên thứ ba
+            khác liên quan.</p>
+        <p>- Cung cấp hóa đơn GTGT sau khi bên A thanh toán toàn bộ giá trị hợp đồng.</p>
+        <p class="bold">ĐIỀU 7: ĐIỀU KHOẢN THI HÀNH </p>
+        <p>- Hai bên cam kết tạo điều kiện thuận lợi cho nhau để thực hiện có hiệu quả các điều khoản sẽ ghi trong Hợp
+            đồng. Mọi thay đổi, bổ sung nội dung công việc phải được hai bên cùng thống nhất bằng văn bản.</p>
+        <p>- Trong quá trình thực hiện Hợp đồng nếu có vướng mắc hoặc có tranh chấp hai bên cùng nhau bàn bạc thương
+            lượng
+            để giải quyết trên tinh thần hợp tác. Nếu không thể thương lượng, hòa giải được, hai bên thống nhất đưa vụ
+            việc
+            ra giải quyết tại Tòa án có thẩm quyền quyết định. Quyết định của Toà án là quyết định cuối cùng buộc hai
+            bên
+            phải thực hiện.</p>
+        <p>- Biên bản thương thảo hợp đồng này có hiệu lực kể từ ngày ký và được lập thành 03 bản, Bên A giữ 02 bản, Bên
+            B
+            giữ 01 bản có giá trị pháp lý như nhau./.</p>
+
+        <div class="signature" style="display: flex; justify-content: space-between;">
+            <div class="bold" style="text-align: left;">&emsp;ĐẠI DIỆN BÊN A</div>
+            <div class="bold" style="text-align: right;">ĐẠI DIỆN BÊN B&emsp;</div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div id="footer" class="footer">
+            <img src="https://ninhpoal.github.io/thamdinh/hinhanh/dinhgiaavsodt-removebg-preview.png"
+                style="    width: 100px;" alt="Logo Định Giá AV">
+
+        </div>
+    </div>
+    <script>
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Get parameters from URL
+        var a = getUrlParameter('a');
+        var b = getUrlParameter('b');
+        var c = getUrlParameter('c');
+        var aj = getUrlParameter('aj');
+        var y = getUrlParameter('y');
+        var ss = getUrlParameter('ss');
+        var uu = getUrlParameter('uu');
+        var vv = getUrlParameter('vv');
+        var ae = getUrlParameter('ae');
+        var l = getUrlParameter('l');
+        var ak = getUrlParameter('ak');
+        var al = getUrlParameter('al');
+        var am = getUrlParameter('am');
+        var an = getUrlParameter('an');
+        var f = getUrlParameter('f');
+        var n = getUrlParameter('n');
+        // Display parameters on the page
+
+        document.getElementById('f').textContent = f;
+        document.getElementById('n').textContent = n;
+
+
+        document.getElementById('ss').textContent = ss;
+
+
+
+        document.getElementById('l').textContent = l;
+        document.getElementById('ak').textContent = ak;
+        document.getElementById('al').textContent = al;
+        document.getElementById('am').textContent = am;
+        document.getElementById('an').textContent = an;
+    </script>
+
+
+
+</body>
+
+</html>
