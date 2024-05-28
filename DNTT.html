@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giấy Đề Nghị Thanh Toán</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
     <style>
         @page {
             size: A4;
@@ -39,10 +48,34 @@
             text-align: center;
             margin-bottom: 20px;
         }
+        @media print {
+            #footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                text-align: right;
+                /* Đảm bảo rằng nền footer là trắng để tránh chồng lấp */
+                padding: 10px 0;
+                /* Đường kẻ ngăn cách footer với nội dung */
+            }
+
+            /* Ẩn các phần tử khác nếu cần */
+            #in * {
+                visibility: hidden;
+            }
+
+            #footer,
+            #footer,
+            #content * {
+                visibility: visible;
+            }
+
+            /* Nếu bạn muốn hiện các phần khác của nội dung, hãy tùy chỉnh các selector */
+        }
     </style>
 </head>
 <body>
-   
+    <div id="in"><button type="button" class="btn btn-outline-primary" onclick="window.print()">In hoặc xuất PDF</button></div>
 
     <div id="content">
         <div class="center">
@@ -80,9 +113,10 @@
             <br>
             <p class="right"><span class="bold">VÕ HOÀNG ẤN&ensp;</span></p>
         </div>
-        <div  >
-            <img src="https://ninhpoal.github.io/thamdinh/hinhanh/dinhgiaavsodt-removebg-preview.png" style="    width: 100px;" alt="Logo Định Giá AV">
-            
+        <div id="footer" class="footer">
+            <img src="https://ninhpoal.github.io/thamdinh/hinhanh/dinhgiaavsodt-removebg-preview.png"
+                style="    width: 100px;" alt="Logo Định Giá AV">
+
         </div>
     </div>
     <script>
