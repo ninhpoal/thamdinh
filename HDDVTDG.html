@@ -268,62 +268,25 @@
     </script>
     <script>
         function exportHTML() {
+            var content = document.getElementById("content").innerHTML;
             var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
-                "xmlns:w='urn:schemas-microsoft-com:office:word' " +
-                "xmlns='http://www.w3.org/TR/REC-html40'>" +
-                "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title>" +
-                "<style>" +
-                "@page {" +
-                "    size: A4;" +
-                "    margin: 20mm;" +
-                "}" +
-                "body {" +
-                "    font-family: 'Times New Roman', Times, serif;" +
-                "    width: 210mm;" +
-                "    margin: 0 auto;" +
-                "}" +
-                 
-                `p {
-                        text-align: justify;
-                        line-height: 2;
-                }`+
-                ".center {" +
-                "    text-align: center;" +
-                "}" +
-                ".right {" +
-                "    text-align: right;" +
-                "}" +
-                ".bold {" +
-                "    font-weight: bold;" +
-                "}" +
-                ".underline {" +
-                "    text-decoration: underline;" +
-                "}" +
-                ".signature {" +
-                "    margin-top: 50px;" +
-                "}" +
-                ".content {" +
-                "    margin-left: 40px;" +
-                "}" +
-                ".red {" +
-                "    color: red;" +
-                "}" +
-                ".buttons {" +
-                "    text-align: center;" +
-                "    margin-bottom: 20px;" +
-                "}" +
-                "</style>" +
-                "</head><body>";
-    
-            var sourceHTML = header + document.getElementById("content").innerHTML;
-    
-            var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
-            var fileDownload = document.createElement("a");
-            document.body.appendChild(fileDownload);
-            fileDownload.href = source;
-            fileDownload.download = 'document.doc';
-            fileDownload.click();
-            document.body.removeChild(fileDownload);
+                         "xmlns:w='urn:schemas-microsoft-com:office:word' " +
+                         "xmlns='http://www.w3.org/TR/REC-html40'>" +
+                         "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title>" +
+                         "<style>" +
+                         "@page { size: A4; margin: 20mm; }" +
+                         "body { font-family: 'Times New Roman', Times, serif; width: 210mm; margin: 0 auto; }" +
+                         "p { text-align: justify; line-height: 1.6; }" +
+                         "</style></head><body>";
+            var footer = "</body></html>";
+            var sourceHTML = header + content + footer;
+            var converted = htmlDocx.asBlob(sourceHTML);
+            var link = document.createElement('a');
+            link.href = URL.createObjectURL(converted);
+            link.download = 'document.doc';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
     </script>
 
