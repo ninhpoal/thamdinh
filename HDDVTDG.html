@@ -26,12 +26,11 @@
             /* Width of A4 */
             margin: 0 auto;
         }
-
-
+        
+        
         p {
             text-align: justify;
         }
-
         .center {
             text-align: center;
         }
@@ -96,22 +95,19 @@
 <body>
     <div id="in"><button type="button" class="btn btn-outline-primary" onclick="window.print()">In hoặc xuất
             PDF</button>
-        <button id="exportBtn" type="button" class="btn btn-outline-primary" onclick="exportHTML()">Xuất thành file
-            DOC</button>
-    </div>
+            <button id="exportBtn" type="button" class="btn btn-outline-primary" onclick="exportHTML()">Xuất thành file DOC</button></div>
 
     <div id="content">
         <div class="center">
             <h4 class="bold">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h4>
             <h5 class="bold">Độc lập - Tự do - Hạnh phúc</h5>
             <p class="center">---------------o0o---------------</p>
-
+            
         </div>
-
+    
         <div class="signature" style="display: flex; justify-content: space-between;">
-            <div style="text-align: left;">Số: <span id="y"></span>/HĐ/TĐG/AAVC</div>
-            <div style="text-align: right;"><span id="tinh"></span>, Ngày <span id="a"></span> tháng <span
-                    id="b"></span> năm <span id="c"></span></div>
+            <div  style="text-align: left;">Số: <span id="y"></span>/HĐ/TĐG/AAVC</div>
+            <div style="text-align: right;"><span id="tinh"></span>, Ngày <span id="a"></span> tháng <span id="b"></span> năm <span id="c"></span></div>
         </div>
         <br>
         <h4 class="center bold">HỢP ĐỒNG DỊCH VỤ THẨM ĐỊNH GIÁ </h4>
@@ -124,7 +120,7 @@
         <p>- Căn cứ Nghị định số 59/2011/NĐ-CP ngày 18/7/2011 của Chính phủ và Thông tư số 127/2014/TT-BTC hướng dẫn
             thực hiện Nghị định 59/2011/NĐ-CP;</p>
         <p>Căn cứ nhu cầu và khả năng của hai bên.</p>
-
+        
         <div class="content">
             <p>Hôm nay, chúng tôi gồm các bên dưới đây:</p>
             <p><span class="bold">1.Bên giao việc:</span> (Gọi tắt là Bên A):<span class="bold" id="aj"> .</span></p>
@@ -254,7 +250,7 @@
             var results = regex.exec(location.search);
             return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
         }
-
+    
         // Function to set text content if element exists
         function setTextContentById(id, value) {
             var element = document.getElementById(id);
@@ -262,110 +258,72 @@
                 element.textContent = value;
             }
         }
-
+    
         // Get parameters from URL and set content
         var parameters = ['a', 'b', 'c', 'aj', 'tinh', 'y', 'ss', 'ae', 'l', 'ak', 'al', 'am', 'an', 'f', 'n'];
-        parameters.forEach(function (param) {
+        parameters.forEach(function(param) {
             var value = getUrlParameter(param);
             setTextContentById(param, value);
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/html-docx-js@0.3.1/dist/html-docx.min.js"></script>
-
     <script>
         function exportHTML() {
-            var content = document.getElementById("content").innerHTML;
             var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
                 "xmlns:w='urn:schemas-microsoft-com:office:word' " +
                 "xmlns='http://www.w3.org/TR/REC-html40'>" +
                 "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title>" +
                 "<style>" +
-                ` @page {
-            size: A4;
-            margin: 20mm;
-        }
-
-        body {
-            font-family: "Times New Roman", Times, serif;
-            width: 210mm;
-            /* Width of A4 */
-            margin: 0 auto;
-        }
-
-
-        p {
-            text-align: justify;
-        }
-
-        .center {
-            text-align: center;
-        }
-
-        .right {
-            text-align: right;
-        }
-
-        .bold {
-            font-weight: bold;
-        }
-
-        .underline {
-            text-decoration: underline;
-        }
-
-        .signature {
-            margin-top: 50px;
-        }
-
-        .content {
-            margin-left: 40px;
-        }
-
-        .red {
-            color: red;
-        }
-
-        .buttons {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        @media print {
-            #footer {
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-                text-align: right;
-                /* Đảm bảo rằng nền footer là trắng để tránh chồng lấp */
-                padding: 10px 0;
-                /* Đường kẻ ngăn cách footer với nội dung */
-            }
-
-            /* Ẩn các phần tử khác nếu cần */
-            #in * {
-                visibility: hidden;
-            }
-
-            #footer,
-            #footer,
-            #content * {
-                visibility: visible;
-            }
-
-            /* Nếu bạn muốn hiện các phần khác của nội dung, hãy tùy chỉnh các selector */
-        }`
-
-                +
-                "</style></head><body>";
-            var footer = "</body></html>";
-            var sourceHTML = header + content + footer;
-            var converted = htmlDocx.asBlob(sourceHTML);
-            var link = document.createElement('a');
-            link.href = URL.createObjectURL(converted);
-            link.download = 'document.doc';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+                "@page {" +
+                "    size: A4;" +
+                "    margin: 20mm;" +
+                "}" +
+                "body {" +
+                "    font-family: 'Times New Roman', Times, serif;" +
+                "    width: 210mm;" +
+                "    margin: 0 auto;" +
+                "}" +
+                 
+                `p {
+                        text-align: justify;
+                        line-height: 2;
+                }`+
+                ".center {" +
+                "    text-align: center;" +
+                "}" +
+                ".right {" +
+                "    text-align: right;" +
+                "}" +
+                ".bold {" +
+                "    font-weight: bold;" +
+                "}" +
+                ".underline {" +
+                "    text-decoration: underline;" +
+                "}" +
+                ".signature {" +
+                "    margin-top: 50px;" +
+                "}" +
+                ".content {" +
+                "    margin-left: 40px;" +
+                "}" +
+                ".red {" +
+                "    color: red;" +
+                "}" +
+                ".buttons {" +
+                "    text-align: center;" +
+                "    margin-bottom: 20px;" +
+                "}" +
+                "</style>" +
+                "</head><body>";
+    
+            var sourceHTML = header + document.getElementById("content").innerHTML;
+    
+            var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+            var fileDownload = document.createElement("a");
+            document.body.appendChild(fileDownload);
+            fileDownload.href = source;
+            fileDownload.download = 'document.doc';
+            fileDownload.click();
+            document.body.removeChild(fileDownload);
         }
     </script>
 
