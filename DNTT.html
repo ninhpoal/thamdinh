@@ -175,7 +175,8 @@
         document.getElementById('ss').textContent = ss;
         document.getElementById('uu').textContent = uu;
         document.getElementById('vv').textContent = vv;
-        document.getElementById('vv1').textContent = convertNumberToVietnamese(vv);
+        var vvNumber = Number(vv.replace(/\./g, ''));
+        document.getElementById('vv1').textContent = convertNumberToVietnamese(convertHundreds(vvNumber));
     </script>
     <script>
         function exportHTML() {
