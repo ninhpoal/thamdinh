@@ -88,7 +88,9 @@
 </head>
 
 <body>
-    <div id="in"><button type="button" class="btn btn-outline-primary" onclick="window.print()">In hoặc xuất PDF</button></div>
+    <div id="in"><button type="button" class="btn btn-outline-primary" onclick="window.print()">In hoặc xuất
+        PDF</button>
+        <button id="exportBtn" type="button" class="btn btn-outline-primary" onclick="exportHTML()">Xuất thành file DOC</button></div>
     <div id="content">
         <div class="center">
             <h4 class="bold">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h4>
@@ -223,7 +225,61 @@
         document.getElementById('am').textContent = am;
         document.getElementById('an').textContent = an;
     </script>
-
+    <script>
+        function exportHTML() {
+            var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
+                "xmlns:w='urn:schemas-microsoft-com:office:word' " +
+                "xmlns='http://www.w3.org/TR/REC-html40'>" +
+                "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title>" +
+                "<style>" +
+                "@page {" +
+                "    size: A4;" +
+                "    margin: 20mm;" +
+                "}" +
+                "body {" +
+                "    font-family: 'Times New Roman', Times, serif;" +
+                "    width: 210mm;" +
+                "    margin: 0 auto;" +
+                "}" +
+                ".center {" +
+                "    text-align: center;" +
+                "}" +
+                ".right {" +
+                "    text-align: right;" +
+                "}" +
+                ".bold {" +
+                "    font-weight: bold;" +
+                "}" +
+                ".underline {" +
+                "    text-decoration: underline;" +
+                "}" +
+                ".signature {" +
+                "    margin-top: 50px;" +
+                "}" +
+                ".content {" +
+                "    margin-left: 40px;" +
+                "}" +
+                ".red {" +
+                "    color: red;" +
+                "}" +
+                ".buttons {" +
+                "    text-align: center;" +
+                "    margin-bottom: 20px;" +
+                "}" +
+                "</style>" +
+                "</head><body>";
+    
+            var sourceHTML = header + document.getElementById("content").innerHTML;
+    
+            var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+            var fileDownload = document.createElement("a");
+            document.body.appendChild(fileDownload);
+            fileDownload.href = source;
+            fileDownload.download = 'document.doc';
+            fileDownload.click();
+            document.body.removeChild(fileDownload);
+        }
+    </script>
 
 
 </body>
