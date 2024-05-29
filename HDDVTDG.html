@@ -245,41 +245,21 @@
             var results = regex.exec(location.search);
             return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
         }
-
-        // Get parameters from URL
-        var a = getUrlParameter('a');
-        document.getElementById('a').textContent = a;
-        var b = getUrlParameter('b');
-        document.getElementById('b').textContent = b;
-        var c = getUrlParameter('c');
-        document.getElementById('c').textContent = c;
-        var aj = getUrlParameter('aj');
-        document.getElementById('aj').textContent = aj;
-        var tinh = getUrlParameter('tinh');
-        document.getElementById('tinh').textContent = tinh;
-        var y = getUrlParameter('y');
-        document.getElementById('y').textContent = y;
-        var ss = getUrlParameter('ss');
-        document.getElementById('ss').textContent = ss;
-        var ae = getUrlParameter('ae');
-        document.getElementById('ae').textContent = ae;
-        var l = getUrlParameter('l');
-        document.getElementById('l').textContent = l;
-        var ak = getUrlParameter('ak');
-        document.getElementById('ak').textContent = ak;
-        var al = getUrlParameter('al');
-        document.getElementById('al').textContent = al;
-        var am = getUrlParameter('am');
-        document.getElementById('am').textContent = am;
-        var an = getUrlParameter('an');
-        document.getElementById('an').textContent = an;
-        var f = getUrlParameter('f');
-        document.getElementById('f').textContent = f;
-        var n = getUrlParameter('n');
-        document.getElementById('n').textContent = n;
-        // Display parameters on the page
-        
-        
+    
+        // Function to set text content if element exists
+        function setTextContentById(id, value) {
+            var element = document.getElementById(id);
+            if (element) {
+                element.textContent = value;
+            }
+        }
+    
+        // Get parameters from URL and set content
+        var parameters = ['a', 'b', 'c', 'aj', 'tinh', 'y', 'ss', 'ae', 'l', 'ak', 'al', 'am', 'an', 'f', 'n'];
+        parameters.forEach(function(param) {
+            var value = getUrlParameter(param);
+            setTextContentById(param, value);
+        });
     </script>
 
 
