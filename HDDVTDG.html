@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giấy Đề Nghị Thanh Toán</title>
+    <title>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -101,8 +101,8 @@
         </div>
     
         <div class="signature" style="display: flex; justify-content: space-between;">
-            <div  style="text-align: left;">Số: (cột Y)/HĐ/TĐG/AAVC</div>
-            <div style="text-align: right;">TP HCM, ngày  tháng  năm (cột AE)</div>
+            <div  style="text-align: left;">Số: <span id="y"></span>/HĐ/TĐG/AAVC</div>
+            <div style="text-align: right;"><span id="tinh"></span>, Ngày <span id="a"></span> tháng <span id="b"></span> năm <span id="c"></span></div>
         </div>
         <br>
         <h4 class="center bold">HỢP ĐỒNG DỊCH VỤ THẨM ĐỊNH GIÁ </h4>
@@ -118,7 +118,7 @@
         
         <div class="content">
             <p>Hôm nay, chúng tôi gồm các bên dưới đây:</p>
-            <p><span class="bold">1.Bên giao việc:</span> (Gọi tắt là Bên A):<span class="bold" id="aj2"> .</span></p>
+            <p><span class="bold">1.Bên giao việc:</span> (Gọi tắt là Bên A):<span class="bold" id="aj"> .</span></p>
             <p>- Đại diện: <span id="ak"></span>
                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Chức vụ: <span id="al"></span>
             </p>
@@ -144,7 +144,7 @@
         </div>
         <p class="bold">ĐIỀU 1: NỘI DUNG CÔNG VIỆC:</p>
         <div class="content">
-            <p>Bên A giao Bên B thực hiện thẩm định giá Gói thầu: <span id="l1"></span>.</p>
+            <p>Bên A giao Bên B thực hiện thẩm định giá Gói thầu: <span id="l"></span>.</p>
         </div>
         <p class="bold">ĐIỀU 2: THỜI ĐIỂM THẨM ĐỊNH GIÁ </p>
         <div class="content">
@@ -248,36 +248,38 @@
 
         // Get parameters from URL
         var a = getUrlParameter('a');
+        document.getElementById('a').textContent = a;
         var b = getUrlParameter('b');
+        document.getElementById('b').textContent = b;
         var c = getUrlParameter('c');
+        document.getElementById('c').textContent = c;
         var aj = getUrlParameter('aj');
+        document.getElementById('aj').textContent = aj;
+        var tinh = getUrlParameter('tinh');
+        document.getElementById('tinh').textContent = tinh;
         var y = getUrlParameter('y');
+        document.getElementById('y').textContent = y;
         var ss = getUrlParameter('ss');
-        var uu = getUrlParameter('uu');
-        var vv = getUrlParameter('vv');
-        var ae = getUrlParameter('ae');
-        var l = getUrlParameter('l');
-        var ak = getUrlParameter('ak');
-        var al = getUrlParameter('al');
-        var am = getUrlParameter('am');
-        var an = getUrlParameter('an');
-        var f = getUrlParameter('f');
-        var n = getUrlParameter('n');
-        // Display parameters on the page
-
-        document.getElementById('f').textContent = f;
-        document.getElementById('n').textContent = n;
-
-
         document.getElementById('ss').textContent = ss;
-
-
-
+        var ae = getUrlParameter('ae');
+        document.getElementById('ae').textContent = ae;
+        var l = getUrlParameter('l');
         document.getElementById('l').textContent = l;
+        var ak = getUrlParameter('ak');
         document.getElementById('ak').textContent = ak;
+        var al = getUrlParameter('al');
         document.getElementById('al').textContent = al;
+        var am = getUrlParameter('am');
         document.getElementById('am').textContent = am;
+        var an = getUrlParameter('an');
         document.getElementById('an').textContent = an;
+        var f = getUrlParameter('f');
+        document.getElementById('f').textContent = f;
+        var n = getUrlParameter('n');
+        document.getElementById('n').textContent = n;
+        // Display parameters on the page
+        
+        
     </script>
 
 
