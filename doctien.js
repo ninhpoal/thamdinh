@@ -53,7 +53,7 @@ function convertNumberToVietnamese(number) {
 
     // Viết hoa chữ cái đầu tiên của kết quả
     result = result.trim();
-    result = result.charAt(0).toUpperCase() + result.slice(1);
+    result = result.charAt(0).toUpperCase() + result.slice(1) +' đồng';
 
     return result;
 }
