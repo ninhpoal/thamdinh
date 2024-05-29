@@ -121,7 +121,7 @@
                 <li>Số tiền đơn vị đã ứng trước: <span id="uu"> </span> VND</li>
                 <li>Số tiền còn lại phải thanh toán: <span id="vv"></span> VND.</li>
             </ul>
-            <p>(Bằng chữ: <span>giá trị bằng chữ cột V</span>)</p>
+            <p>(Bằng chữ: <span id="vv1"></span>)</p>
         </div>
         <p class="bold">Thông tin tài khoản:</p>
         <div class="content">
@@ -145,6 +145,7 @@
             style="    width: 100px;" alt="Logo Định Giá AV">
 
     </div>
+    <script src="doctien.js"></script>
     <script>
         function getUrlParameter(name) {
             name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
@@ -174,6 +175,7 @@
         document.getElementById('ss').textContent = ss;
         document.getElementById('uu').textContent = uu;
         document.getElementById('vv').textContent = vv;
+        document.getElementById('vv1').textContent = convertNumberToVietnamese(vv);
     </script>
     <script>
         function exportHTML() {
