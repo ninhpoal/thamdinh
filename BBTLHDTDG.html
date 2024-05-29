@@ -150,7 +150,7 @@
             <p>- Tổng số phí dịch vụ (bao gồm VAT): <span id="ss"></span> đồng</p>
             <p>- Số đã thanh toán : <span id="uu"></span> đồng</p>
             <p>- Số còn lại phải thanh toán : <span id="vv"></span> đồng</p>
-            <p>(Bằng chữ: (giá trị bằng chữ cột V))</p>
+            <i>(Bằng chữ: <span id="vv1"></span>)</i>
             <p>Hình thức thanh toán: Tiền mặt/Bằng chuyển khoản.</p>
 
         </div>
@@ -229,6 +229,9 @@
         document.getElementById('al').textContent = al;
         document.getElementById('am').textContent = am;
         document.getElementById('an').textContent = an;
+        var vvNumber = Number(vv.replace(/\./g, ''));
+        console.log(vvNumber)
+        document.getElementById('vv1').textContent = convertNumberToVietnamese(vvNumber);
     </script>
     <script>
         function exportHTML() {

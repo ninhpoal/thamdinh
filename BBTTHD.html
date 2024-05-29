@@ -169,7 +169,7 @@
             ngày hợp đồng có hiệu lực và Bên A đã bàn giao đầy đủ hô sơ pháp lý về tài sản thẩm định cho Bên B).
         </p>
         <p><span class="bold">4.2 Phí dịch vụ thẩm định giá: </span> Theo thỏa thuận của hai bên, cụ thể như sau:</p>
-        <p>Giá trị hợp đồng: <span id="ss"></span> đồng (đã bao gồm thuế GTGT)</p>
+        <p>Giá trị hợp đồng: <span id="ss"></span> đồng (đã bao gồm thuế GTGT) <i>(Bằng chữ: <span id="ss1"></span>)</i></p>
         <p class="bold">ĐIỀU 5: PHƯƠNG THỨC THANH TOÁN </p>
         <div class="content">
             <p>- Phương thức thanh toán: Tiền mặt hoặc chuyển khoản.</p>
@@ -275,7 +275,8 @@
     
         
         document.getElementById('ss').textContent = ss;
-   
+        var vvNumber = Number(ss.replace(/\./g, ''));
+        document.getElementById('ss1').textContent = convertNumberToVietnamese(vvNumber);
       
     
         document.getElementById('l').textContent = l;
