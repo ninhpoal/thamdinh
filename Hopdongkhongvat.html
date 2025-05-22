@@ -202,73 +202,71 @@
     <script>
         function numberToWords(number) {
             const units = ["", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"];
-            const teens = ["", "mười một", "mười hai", "mười ba", "mười bốn", "mười lăm", "mười sáu", "mười bảy", "mười tám", "mười chín"];
-            const tens = ["", "mười", "hai mươi", "ba mươi", "bốn mươi", "năm mươi", "sáu mươi", "bảy mươi", "tám mươi", "chín mươi"];
+            const tens = ["", "mươi", "hai mươi", "ba mươi", "bốn mươi", "năm mươi", "sáu mươi", "bảy mươi", "tám mươi", "chín mươi"];
 
-            // Hàm xử lý nhóm 3 chữ số (đơn vị, chục, trăm)
             function processGroup(num) {
                 let result = "";
 
                 // Xử lý hàng trăm
-                if (num >= 100) {
-                    result += units[Math.floor(num / 100)] + " trăm ";
+                const hundred = Math.floor(num / 100);
+                if (hundred > 0) {
+                    result += units[hundred] + " trăm ";
                     num %= 100;
+                    if (num > 0 && num < 10) {
+                        result += "lẻ ";
+                    }
                 }
 
                 // Xử lý hàng chục và đơn vị
                 if (num > 0) {
-                    if (num < 10) {
-                        result += units[num];
-                    } else if (num < 20) {
-                        result += teens[num - 10];
-                    } else {
-                        const ten = Math.floor(num / 10);
-                        const unit = num % 10;
+                    const ten = Math.floor(num / 10);
+                    const unit = num % 10;
+
+                    if (ten > 0) {
                         result += tens[ten];
-                        if (unit > 0) {
-                            if (unit === 1) {
-                                result += " mốt";
-                            } else if (unit === 5) {
-                                result += " lăm";
-                            } else {
-                                result += " " + units[unit];
-                            }
+                        if (unit === 1) {
+                            result += " mốt";
+                        } else if (unit === 5) {
+                            result += " lăm";
+                        } else if (unit > 0) {
+                            result += " " + units[unit];
                         }
+                    } else {
+                        result += units[unit];
                     }
                 }
 
                 return result.trim();
             }
 
-            // Nếu số 0, trả về "không"
             if (number === 0) return "không";
 
-            const billion = Math.floor(number / 1000000000);
-            number %= 1000000000;
-            const million = Math.floor(number / 1000000);
-            number %= 1000000;
-            const thousand = Math.floor(number / 1000);
-            const remainder = number % 1000;
+            const groups = [];
+            while (number > 0) {
+                groups.push(number % 1000);
+                number = Math.floor(number / 1000);
+            }
 
+            const units_group = ["", " nghìn", " triệu", " tỷ", " nghìn tỷ", " triệu tỷ"];
             let result = "";
 
-            if (billion > 0) {
-                result += processGroup(billion) + " tỷ ";
+            for (let i = groups.length - 1; i >= 0; i--) {
+                if (groups[i] > 0) {
+                    result += processGroup(groups[i]) + units_group[i] + " ";
+                }
             }
 
-            if (million > 0) {
-                result += processGroup(million) + " triệu ";
-            }
+            // Xử lý đặc biệt cho số 0 ở giữa các nhóm
+            result = result.replace("không trăm lẻ ", "");
+            result = result.replace("không trăm ", "");
+            result = result.replace("mươi không", "mươi");
 
-            if (thousand > 0) {
-                result += processGroup(thousand) + " nghìn ";
-            }
+            // Chuẩn hóa kết quả
+            result = result.trim();
+            result = result.charAt(0).toUpperCase() + result.slice(1);
+            result += " đồng";
 
-            if (remainder > 0) {
-                result += processGroup(remainder);
-            }
-
-            return result.trim() + " đồng";
+            return result;
         }
 
         // Định nghĩa biến cần nạp
@@ -343,7 +341,8 @@
             // Chuyển O thành chữ và lưu vào O_TIEN
             if (BIEN["O"] && !isNaN(parseFloat(BIEN["O"].replace(/[,.]/g, '')))) {
                 const numValue = parseFloat(BIEN["O"].replace(/[,.]/g, ''));
-                BIEN["O_TIEN"] = numberToWords(numValue);
+                BIEN["O"] = formatCurrency(numValue); // Format số tiền
+                BIEN["O_TIEN"] = numberToWords(numValue).charAt(0).toUpperCase() + numberToWords(numValue).slice(1); // Viết hoa chữ đầu
             } else {
                 BIEN["O_TIEN"] = "";
             }
