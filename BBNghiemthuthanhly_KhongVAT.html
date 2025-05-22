@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BB Nghiệm thu thanh lý (Không VAT)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://unpkg.com/pizzip@3.1.4/dist/pizzip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.37.11/docxtemplater.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <style>
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .preview-section {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .preview-item {
+            margin-bottom: 10px;
+        }
+
+        .preview-label {
+            font-weight: bold;
+        }
+
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-12">
+                <h2 class="text-center my-4">BB Nghiệm thu thanh lý (Không VAT)</h2>
+                <div class="d-flex justify-content-end no-print" id="action-buttons">
+
+                    <button id="exportBtn" type="button" class="btn btn-outline-primary"
+                        onclick="exportToWordTemplate()">Xuất thành file DOC</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form nhập dữ liệu -->
+        <div class="form-container no-print">
+            <h4>Thông tin biên bản</h4>
+            <p>BB Nghiệm thu thanh lý (Không VAT)</p>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="input-Y" class="form-label">Y:</label>
+                    <input type="text" class="form-control" id="input-Y" placeholder="Nhập Y">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="input-A" class="form-label">A:</label>
+                    <input type="text" class="form-control" id="input-A" placeholder="Nhập A">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="input-B" class="form-label">B:</label>
+                    <input type="text" class="form-control" id="input-B" placeholder="Nhập B">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="input-C" class="form-label">C:</label>
+                    <input type="text" class="form-control" id="input-C" placeholder="Nhập C">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="input-AH" class="form-label">AH:</label>
+                    <input type="text" class="form-control" id="input-AH" placeholder="Nhập AH">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="input-AJ" class="form-label">AJ:</label>
+                    <input type="text" class="form-control" id="input-AJ" placeholder="Nhập AJ">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="input-AK" class="form-label">AK:</label>
+                    <input type="text" class="form-control" id="input-AK" placeholder="Nhập AK">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="input-AM" class="form-label">AM:</label>
+                    <input type="text" class="form-control" id="input-AM" placeholder="Nhập AM">
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="input-AL" class="form-label">AL:</label>
+                    <input type="text" class="form-control" id="input-AL" placeholder="Nhập AL">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="input-K" class="form-label">K:</label>
+                    <input type="text" class="form-control" id="input-K" placeholder="Nhập K">
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="input-Z" class="form-label">Z:</label>
+                    <input type="text" class="form-control" id="input-Z" placeholder="Nhập Z">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="input-Z" class="form-label">Z:</label>
+                    <input type="text" class="form-control" id="input-Z" placeholder="Nhập Z">
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <label for="input-AA" class="form-label">AA:</label>
+                    <input type="text" class="form-control" id="input-AA" placeholder="Nhập AA">
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="col-md-12 mb-3">
+                    <label for="input-AA_TIEN" class="form-label">Giá trị bằng chữ:</label>
+                    <input type="text" class="form-control" id="input-AA_TIEN"
+                        placeholder="Giá trị tự động chuyển đổi từ số tiền" readonly>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="updateValues()">Cập nhật thông tin</button>
+        </div>
+
+        <!-- Phần xem trước dữ liệu -->
+        <div class="preview-section mt-4">
+            <h4>Xem trước thông tin</h4>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="preview-item">
+                        <span class="preview-label">Y:</span> <span id="display-Y"></span>
+                    </div>
+                    <div class="preview-item">
+                        <span class="preview-label">A:</span> <span id="display-A"></span>
+                    </div>
+                    <div class="preview-item">
+                        <span class="preview-label">B:</span> <span id="display-B"></span>
+                    </div>
+                    <div class="preview-item">
+                        <span class="preview-label">C:</span> <span id="display-C"></span>
+                    </div>
+                    <div class="preview-item">
+                        <span class="preview-label">AH:</span> <span id="display-AH"></span>
+                    </div>
+                    <div class="preview-item">
+                        <span class="preview-label">AJ:</span> <span id="display-AJ"></span>
+                    </div>
+                    <div class="preview-item">
+                        <span class="preview-label">AK:</span> <span id="display-AK"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="preview-item">
+                        <span class="preview-label">AL:</span> <span id="display-AL"></span>
+                    </div>
+                    <div class="preview-item">
+                        <span class="preview-label">AM:</span> <span id="display-AM"></span>
+                    </div>
+                    <div class="preview-item">
+                        <span class="preview-label">K:</span> <span id="display-K"></span>
+                    </div>
+                    <div class="preview-item">
+                        <span class="preview-label">X:</span> <span id="display-X"></span>
+                    </div>
+                    <div class="preview-item">
+                        <span class="preview-label">Z:</span> <span id="display-Z"></span>
+                    </div>
+                    <div class="preview-item">
+                        <span class="preview-label">AA:</span> <span id="display-AA"></span>
+                    </div>
+                    <div class="preview-item">
+                        <span class="preview-label">Giá trị bằng chữ:</span> <span id="display-AA_TIEN"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function numberToWords(number) {
+            const units = ["", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"];
+            const tens = ["", "mươi", "hai mươi", "ba mươi", "bốn mươi", "năm mươi", "sáu mươi", "bảy mươi", "tám mươi", "chín mươi"];
+
+            function processGroup(num) {
+                let result = "";
+
+                // Xử lý hàng trăm
+                const hundred = Math.floor(num / 100);
+                if (hundred > 0) {
+                    result += units[hundred] + " trăm ";
+                    num %= 100;
+                    if (num > 0 && num < 10) {
+                        result += "lẻ ";
+                    }
+                }
+
+                // Xử lý hàng chục và đơn vị
+                if (num > 0) {
+                    const ten = Math.floor(num / 10);
+                    const unit = num % 10;
+
+                    if (ten > 0) {
+                        result += tens[ten];
+                        if (unit === 1) {
+                            result += " mốt";
+                        } else if (unit === 5) {
+                            result += " lăm";
+                        } else if (unit > 0) {
+                            result += " " + units[unit];
+                        }
+                    } else {
+                        result += units[unit];
+                    }
+                }
+
+                return result.trim();
+            }
+
+            if (number === 0) return "không";
+
+            const groups = [];
+            while (number > 0) {
+                groups.push(number % 1000);
+                number = Math.floor(number / 1000);
+            }
+
+            const units_group = ["", " nghìn", " triệu", " tỷ", " nghìn tỷ", " triệu tỷ"];
+            let result = "";
+
+            for (let i = groups.length - 1; i >= 0; i--) {
+                if (groups[i] > 0) {
+                    result += processGroup(groups[i]) + units_group[i] + " ";
+                }
+            }
+
+            // Xử lý đặc biệt cho số 0 ở giữa các nhóm
+            result = result.replace("không trăm lẻ ", "");
+            result = result.replace("không trăm ", "");
+            result = result.replace("mươi không", "mươi");
+
+            // Chuẩn hóa kết quả
+            result = result.trim();
+            result = result.charAt(0).toUpperCase() + result.slice(1);
+            result += " đồng";
+
+            return result;
+        }
+
+        // Định nghĩa biến cần nạp
+        var BIEN = {
+            "Y": "",
+            "A": "",
+            "B": "",
+            "C": "",
+            "AH": "",
+            "AJ": "",
+            "AK": "",
+            "AL": "",
+            "AM": "",
+            "K": "",
+            "X": "",
+            "Z": "",
+            "AA": "",
+            "AA_TIEN": ""
+        };
+
+        // Lưu trữ mô tả cho từng trường (sử dụng cho form)
+        var FIELD_LABELS = {
+            "Y": "Số CT",
+            "A": "Ngày",
+            "B": "Tháng",
+            "C": "Năm",
+            "AH": "NGÀY HĐ",
+            "AJ": "HỌ TÊN KH",
+            "AK": "NĂM SINH KH",
+            "AL": "CCCD/ CMND Số",
+            "AM": "ĐIA CHỈ KH",
+            "K": "SĐT KH",
+            "X": "Phí Hợp đồng",
+            "Z": "ĐÃ THU",
+            "AA": "CÒN PHẢI THU",
+            "AA_TIEN": "O Bằng chữ"
+        };
+
+        // Hàm lấy tham số từ URL
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Lấy các tham số từ URL nếu có
+        function loadFromUrl() {
+            // Kiểm tra và nạp từ URL nếu có
+            for (var key in BIEN) {
+                var urlValue = getUrlParameter(key.toLowerCase());
+                if (urlValue) {
+                    BIEN[key] = urlValue;
+                }
+            }
+            updateDisplay();
+            updateInputLabels();
+        }
+
+        // Thêm hàm format số tiền
+        function formatCurrency(number) {
+            return new Intl.NumberFormat('vi-VN').format(number);
+        }
+
+        // Hàm cập nhật giá trị từ form input
+        function updateValues() {
+            // Lấy giá trị từ các input
+            for (var key in BIEN) {
+                if (key !== "AA_TIEN") {  // Bỏ qua AA_TIEN vì sẽ tính từ O
+                    var inputValue = document.getElementById('input-' + key)?.value;
+                    if (inputValue !== undefined) {
+                        BIEN[key] = inputValue;
+                    }
+                }
+            }
+
+            // Chuyển O thành chữ và lưu vào AA_TIEN
+            if (BIEN["AA"] && !isNaN(parseFloat(BIEN["AA"].replace(/[,.]/g, '')))) {
+                const numValue = parseFloat(BIEN["AA"].replace(/[,.]/g, ''));
+                BIEN["AA"] = formatCurrency(numValue); // Format số tiền
+                BIEN["AA_TIEN"] = numberToWords(numValue).charAt(0).toUpperCase() + numberToWords(numValue).slice(1); // Viết hoa chữ đầu
+            } else {
+                BIEN["AA_TIEN"] = "";
+            }
+
+            // Cập nhật hiển thị
+            updateDisplay();
+        }
+
+        // Hàm cập nhật nhãn cho các trường input
+        function updateInputLabels() {
+            for (var key in FIELD_LABELS) {
+                // Cập nhật label cho input
+                var labelElement = document.querySelector(`label[for="input-${key}"]`);
+                if (labelElement) {
+                    labelElement.textContent = FIELD_LABELS[key] + ":";
+                }
+
+                // Cập nhật placeholder
+                var inputElement = document.getElementById('input-' + key);
+                if (inputElement) {
+                    inputElement.placeholder = "Nhập " + FIELD_LABELS[key];
+                }
+            }
+        }
+
+        // Hàm cập nhật hiển thị các giá trị
+        function updateDisplay() {
+            // Hiển thị các giá trị trong phần xem trước
+            for (var key in BIEN) {
+                var displayElement = document.getElementById('display-' + key);
+                if (displayElement) {
+                    displayElement.textContent = BIEN[key];
+                }
+
+                var inputElement = document.getElementById('input-' + key);
+                if (inputElement) {
+                    inputElement.value = BIEN[key];
+                }
+            }
+        }
+
+        // Hàm xuất file Word template
+        async function exportToWordTemplate() {
+            try {
+                // Tải template từ server - thay đường dẫn bằng URL thực tế của file mẫu của bạn
+                const response = await fetch('https://ninhpoal.github.io/thamdinh/File/BBNghiemthuthanhly_KhongVAT.docx');
+                if (!response.ok) {
+                    throw new Error('Không thể tải template Word');
+                }
+                const templateContent = await response.arrayBuffer();
+
+                // Tạo instance mới của PizZip và docxtemplater
+                const zip = new PizZip(templateContent);
+                const doc = new window.docxtemplater(zip, {
+                    paragraphLoop: true,
+                    linebreaks: true
+                });
+
+                // Đặt dữ liệu vào template
+                doc.setData(BIEN);
+
+                // Render template với dữ liệu
+                doc.render();
+
+                // Tạo và tải file
+                const blob = doc.getZip().generate({
+                    type: "blob",
+                    mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                });
+
+                // Đặt tên file và tải xuống
+                const fileName = `Bien_Ban_Nghiem_thu_thanh_ly_Khong_VAT${BIEN.Y || 'new'}.docx`;
+                saveAs(blob, fileName);
+
+            } catch (error) {
+                console.error('Error exporting to Word template:', error);
+                if (error.properties && error.properties.errors) {
+                    console.log('Template Error details:', error.properties.errors);
+                }
+                alert('Có lỗi khi xuất file Word. Vui lòng thử lại sau.');
+            }
+        }
+
+        // Khi trang được tải
+        document.addEventListener('DOMContentLoaded', function () {
+            // Cập nhật nhãn cho các trường input
+            updateInputLabels();
+
+            // Nạp từ URL nếu có
+            loadFromUrl();
+        });
+    </script>
+</body>
+
+</html>
