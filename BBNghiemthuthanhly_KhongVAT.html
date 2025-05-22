@@ -341,7 +341,7 @@
         function updateValues() {
             // Lấy giá trị từ các input
             for (var key in BIEN) {
-                if (key !== "AA_TIEN") {  // Bỏ qua AA_TIEN vì sẽ tính từ O
+                if (key !== "AA_TIEN") {  // Bỏ qua AA_TIEN vì sẽ tính sau
                     var inputValue = document.getElementById('input-' + key)?.value;
                     if (inputValue !== undefined) {
                         BIEN[key] = inputValue;
@@ -349,11 +349,18 @@
                 }
             }
 
-            // Chuyển O thành chữ và lưu vào AA_TIEN
+            // Format currency cho các trường số tiền X, Z, AA
+            ['X', 'Z', 'AA'].forEach(key => {
+                if (BIEN[key] && !isNaN(parseFloat(BIEN[key].replace(/[,.]/g, '')))) {
+                    const numValue = parseFloat(BIEN[key].replace(/[,.]/g, ''));
+                    BIEN[key] = formatCurrency(numValue);
+                }
+            });
+
+            // Chuyển AA thành chữ và lưu vào AA_TIEN
             if (BIEN["AA"] && !isNaN(parseFloat(BIEN["AA"].replace(/[,.]/g, '')))) {
                 const numValue = parseFloat(BIEN["AA"].replace(/[,.]/g, ''));
-                BIEN["AA"] = formatCurrency(numValue); // Format số tiền
-                BIEN["AA_TIEN"] = numberToWords(numValue).charAt(0).toUpperCase() + numberToWords(numValue).slice(1); // Viết hoa chữ đầu
+                BIEN["AA_TIEN"] = numberToWords(numValue).charAt(0).toUpperCase() + numberToWords(numValue).slice(1);
             } else {
                 BIEN["AA_TIEN"] = "";
             }
