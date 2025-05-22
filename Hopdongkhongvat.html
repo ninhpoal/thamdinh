@@ -326,6 +326,11 @@
             updateInputLabels();
         }
 
+        // Thêm hàm format số tiền
+        function formatCurrency(number) {
+            return new Intl.NumberFormat('vi-VN').format(number);
+        }
+
         // Hàm cập nhật giá trị từ form input
         function updateValues() {
             // Lấy giá trị từ các input
