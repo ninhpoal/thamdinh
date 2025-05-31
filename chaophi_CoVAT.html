@@ -259,7 +259,7 @@
             "B": "Tháng",
             "C": "Năm",
             "L": "TÀI SẢN TĐ",
-            "AO": "ĐẠI DIỆN CQ/CT",
+            "AO": "HỌ TÊN KH",
             "F": "Thời điểm thẩm định",
             "R": "CÓ VAT?",
             "O": "GIA TRI TS",
@@ -296,13 +296,19 @@
         function updateValues() {
             // Lấy giá trị từ các input
             for (var key in BIEN) {
-                if (key !== "O_TIEN") {  // Bỏ qua O_TIEN vì sẽ tính từ O
+                if (key !== "O_TIEN" && key !== "F") {  // Bỏ qua O_TIEN và F
                     var inputValue = document.getElementById('input-' + key)?.value;
                     if (inputValue !== undefined) {
                         BIEN[key] = inputValue;
                     }
                 }
             }
+
+            // Tự động tạo thời điểm thẩm định theo định dạng "Tháng mm năm yyyy"
+            const currentDate = new Date();
+            const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Tháng bắt đầu từ 0
+            const year = currentDate.getFullYear();
+            BIEN["F"] = `Tháng ${month} năm ${year}`;
 
             // Chuyển O thành chữ và lưu vào O_TIEN
             if (BIEN["O"] && !isNaN(parseFloat(BIEN["O"].replace(/[,.]/g, '')))) {
