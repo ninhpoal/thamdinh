@@ -147,7 +147,10 @@
                         placeholder="Giá trị tự động chuyển đổi từ số tiền" readonly>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary" onclick="updateValues()">Cập nhật thông tin</button>
+            <div class="d-flex gap-2">
+                <button type="button" class="btn btn-primary" onclick="updateValues()">Cập nhật thông tin</button>
+                <button type="button" class="btn btn-outline-primary" onclick="exportToWordTemplate()">Xuất thành file DOC</button>
+            </div>
         </div>
 
         <!-- Phần xem trước dữ liệu -->
